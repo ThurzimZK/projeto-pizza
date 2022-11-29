@@ -99,9 +99,14 @@ dqs('.pizzaInfo--addButton').addEventListener('click', ()=>{
 function updateCart(){
     if(cart.length > 0){
         dqs('aside').classList.add('show')
+        dqs('.cart').innerHTML = ''
         for(let i in cart){
             let pizzaItem = pizzaJson.find((item)=> item.id == cart[i].id)
-            console.log(pizzaItem);
+            let cartItem = dqs('.models .cart--item').cloneNode(true)
+
+            dqs('.cart').append(cartItem)
+
+
         }
     } else{
         dqs('aside').classList.remove('show')
