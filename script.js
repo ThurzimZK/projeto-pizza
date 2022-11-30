@@ -97,7 +97,12 @@ dqs('.pizzaInfo--addButton').addEventListener('click', ()=>{
 })
 
 dqs('.menu-openner').addEventListener('click', ()=>{
-    
+    if(cart.length > 0){
+        dqs('aside').style.left = '0'
+    }
+})
+dqs('.menu-closer').addEventListener('click', ()=>{
+    dqs('aside').style.left = '100vw'
 })
 
 function updateCart(){
@@ -160,5 +165,6 @@ function updateCart(){
 
     } else{
         dqs('aside').classList.remove('show')
+        dqs('aside').style.left = '100vw'
     }
 }
